@@ -18,7 +18,7 @@ This is a template for a data analysis project using R, Rmarkdown (and variants,
 
 The template comes with a few files that are meant as illustrative examples of the kinds of content you would place in the different folders. 
 
-* There is a simple, made-up dataset as CSV file in the `raw_data` folder. 
+* There is a simple, made-up dataset in the `raw_data` folder. 
 * The `processing_code` folder contains a single R script which loads the raw data, performs a bit of cleaning, and saves the result in the `processed_data` folder.
 * The `analysis_code` folder contains an R script which loads the processed data, fits a simple model, and produces a figure and some numeric output, which is saved in the `results` folder.
 * The `products` folder contains an example `bibtex` and CSL style file for references. Those files are used by the example manuscript, poster and slides.
