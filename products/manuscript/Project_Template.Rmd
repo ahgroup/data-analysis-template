@@ -20,13 +20,23 @@ _Write a summary of your project._
 # Illustrating setup
 _This section is only there to show how to insert results from other places in the project and how to cite figures and other references. Delete this whole section at some point._
 
-Figure \@ref(fig:analysisworkflow) shows a result from the analysis.
 
-```{r analysisfig,  fig.cap='Analysis results.', echo=FALSE}
+This paper [@Leek2015a] discusses types of analyses. 
+
+
+Figure \@ref(fig:resultfigure) shows a result figure from the analysis.
+
+```{r resultfigure,  fig.cap='Analysis figure.', echo=FALSE}
 knitr::include_graphics("../../results/resultfigure.png")
 ```
 
-This paper [@Leek2015a] discusses types of analyses. 
+Table \@ref(tab:resulttable) shows a result table from the analysis.
+
+```{r resulttable,  echo=FALSE}
+resulttable=readRDS("../../results/resulttable.rds")
+knitr::kable(resulttable, caption = 'Result Table.')
+```
+
 
 Note that this cited reference will show up at the end of the document, the reference formatting is determined by the CSL file specified in the YAML header. Many more style files for almost any journal [are available](https://www.zotero.org/styles). You also specify the location of your bibtex reference file in the YAML. You can call your reference file anything you like, I just used the generic word `references.bib` but giving it a more descriptive name is probably better.
 
