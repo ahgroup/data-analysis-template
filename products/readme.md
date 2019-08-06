@@ -7,7 +7,8 @@ Most manuscripts these days have supplementary material, place those into the `s
 
 Often, you might make slides for an oral presentation, place those in the `slides` folder. 
 
-If you make a scientific poster, that should go into the `poster` folder.
+If you make a scientific poster, that should go into the `poster` folder. There are a number of R pacakges that allow you to make a poster in RMarkdown, see [e.g. this list.
+](https://gist.github.com/Pakillo/4854e5d760351206084f6be8abe476b2)
 
 You can add further folders. For instance you could have a `website` folder if you plan to write a blog-post or make an interactive shiny-app for your project.  
 
