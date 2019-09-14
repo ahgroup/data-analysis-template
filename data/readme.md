@@ -11,3 +11,9 @@ If you need to make edits in whatever format you got the data (e.g. Excel), make
 Also, write down somewhere the edits you made. 
 
 Add as many sub-folders as suitable. If you only have a single processing step, one sub-folder for processed data is enough. If you have multiple stages of cleaning and processing, additional sub-folders might be useful. Adjust based on the complexity of your project.
+
+I suggest you save your processed and cleaned data as RDS or RDA/Rdata files. This preserves coding like factors, characters, numeric, etc. If you save as CSV, that information would get lost.
+
+See here for some suggestions on how to store your processed data:
+
+http://www.sthda.com/english/wiki/saving-data-into-r-data-format-rds-and-rdata

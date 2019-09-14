@@ -37,5 +37,12 @@ processeddata <- rawdata %>% dplyr::filter( Height != "sixty" ) %>%
   mutate_all(type.convert) %>% 
   dplyr::filter(Height > 50 & Weight < 1000)
 
-#save data as RDS
+# save data as RDS
+# I suggest you save your processed and cleaned data as RDS or RDA/Rdata files. 
+# This preserves coding like factors, characters, numeric, etc. 
+# If you save as CSV, that information would get lost.
+# See here for some suggestions on how to store your processed data:
+# http://www.sthda.com/english/wiki/saving-data-into-r-data-format-rds-and-rdata
 saveRDS(cleandata, file = "./data/processed_data/processeddata.rds")
+
+
