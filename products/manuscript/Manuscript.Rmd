@@ -7,9 +7,9 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: article
 output:
-  bookdown::html_document2: 
-    toc: false
   bookdown::word_document2: 
+    toc: false
+  bookdown::html_document2: 
     toc: false
 bibliography: ../references.bib
 csl: ../apa.csl
