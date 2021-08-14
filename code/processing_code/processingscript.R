@@ -7,12 +7,20 @@
 #load needed packages. make sure they are installed.
 library(readxl)
 library(dplyr)
+library(here)
 
-#load data. path is relative to project directory.
-rawdata <- readxl::read_excel("./data/raw_data/exampledata.xlsx")
+#path to data
+#note the use of the here() package and not absolute paths
+data_location <- here("data","raw_data","exampledata.xlsx")
+
+#load data. 
+rawdata <- readxl::read_excel(data_location)
 
 #take a look at the data
 dplyr::glimpse(rawdata)
+
+#dataset is so small, we can print it
+print(rawdata)
 
 # looks like we have measurements for height (in centimeters) and weight (in kilogram)
 
@@ -34,8 +42,8 @@ dplyr::glimpse(rawdata)
 # we need to decide if the thresholds are ok (newborns could be <50)
 
 processeddata <- rawdata %>% dplyr::filter( Height != "sixty" ) %>% 
-  mutate_all(type.convert) %>% 
-  dplyr::filter(Height > 50 & Weight < 1000)
+                             dplyr::mutate(Height = as.numeric(Height)) %>% 
+                             dplyr::filter(Height > 50 & Weight < 1000)
 
 # save data as RDS
 # I suggest you save your processed and cleaned data as RDS or RDA/Rdata files. 
@@ -43,6 +51,10 @@ processeddata <- rawdata %>% dplyr::filter( Height != "sixty" ) %>%
 # If you save as CSV, that information would get lost.
 # See here for some suggestions on how to store your processed data:
 # http://www.sthda.com/english/wiki/saving-data-into-r-data-format-rds-and-rdata
-saveRDS(cleandata, file = "./data/processed_data/processeddata.rds")
+
+# location to save file
+save_data_location <- here("data","processed_data","processeddata.rds")
+
+saveRDS(processeddata, file = save_data_location)
 
 

@@ -1,0 +1,98 @@
+---
+title: "Example Manuscript Template for a Data Analysis Project"
+subtitle: ""
+author: Andreas Handel
+institute: "University of Georgia"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: article
+output:
+  bookdown::html_document2: 
+    toc: false
+  bookdown::word_document2: 
+    toc: false
+bibliography: ../references.bib
+csl: ../apa.csl
+---
+
+The structure below is a possible setup for a data analysis project (including the course project). For a manuscript, adjust as needed.
+
+
+# Summary/Abstract
+_Write a summary of your project._
+
+
+# Introduction 
+
+## General Background Information
+_Provide enough background on your topic that others can understand the why and how of your analysis_ 
+
+## Description of data and data source
+_Describe what the data is, what it contains, where it is from, etc. Eventually this might be part of a methods section._
+
+## Questions/Hypotheses to be addressed
+_State the research questions you plan to answer with this analysis._
+
+
+
+# Methods and Results
+
+_In most research papers, results and methods are separate. You can combine them here if you find it easier. You are also welcome to structure things such that those are separate sections._
+
+
+## Data aquisition
+_As applicable, explain where and how you got the data. If you directly import the data from an online source, you can combine this section with the next._
+
+## Data import and cleaning
+_Write code that reads in the file and cleans it so it's ready for analysis. Since this will be fairly long code for most datasets, it might be a good idea to have it in one or several R scripts. If that is the case, explain here briefly what kind of cleaning/processing you do, and provide more details and well documented code somewhere (e.g. as supplement in a paper). All materials, including files that contain code, should be commented well so everyone can follow along._
+
+
+## Exploratory analysis
+
+_Use a combination of text/tables/figures to explore and describe your data. You should produce plots or tables or other summary quantities for the most interesting/important quantities in your data. Depending on the total number of variables in your dataset, explore all or some of the others. FIgures produced here might be histograms or density plots, correlation plots, etc. Tables might summarize your data._
+
+_Continue by creating plots or tables of the outcome(s) of interest and the predictor/exposure/input variables you are most interested in. If your dataset is small, you can do that for all variables. Plots produced here can be scatterplots, boxplots, violinplots, etc. Tables can be simple 2x2 tables or larger ones._
+
+_To get some further insight into your data, if reasonable you could compute simple statistics (e.g. t-tests, simple regression model with 1 predictor, etc.) to look for associations between your outcome(s) and each individual predictor variable. Though note that unless you pre-specified the outcome and main exposure, any "p<0.05 means statistical significance" interpretation is not valid._
+
+Example figure \@ref(fig:resultfigure) shows a result produced by one of the R scripts.
+
+```{r resultfigure,  fig.cap='Analysis figure.', echo=FALSE}
+knitr::include_graphics("../../results/resultfigure.png")
+```
+
+
+## Full analysis
+
+_Use one or several suitable statistical/machine learning methods to analyze your data and to produce meaningful figures, tables, etc. This might again be code that is best placed in one or several separate R scripts that need to be well documented. You want the code to produce figures and data ready for display as tables, and save those. Then you load them here._
+
+Example table \@ref(tab:resulttable) shows a result table from the analysis.
+
+```{r resulttable,  echo=FALSE}
+resulttable=readRDS("../../results/resulttable.rds")
+knitr::kable(resulttable, caption = 'Result Table.')
+```
+
+
+# Discussion
+
+## Summary and Interpretation
+_Summarize what you did, what you found and what it means._
+
+## Strengths and Limitations
+_Discuss what you perceive as strengths and limitations of your analysis._
+
+## Conclusions
+_What are the main take-home messages?_
+
+_Include citations in your Rmd file using bibtex, the list of references will automatically be placed at the end_
+
+This paper [@Leek2015a] discusses types of analyses. 
+
+Note that this cited reference will show up at the end of the document, the reference formatting is determined by the CSL file specified in the YAML header. Many more style files for almost any journal [are available](https://www.zotero.org/styles). You also specify the location of your bibtex reference file in the YAML. You can call your reference file anything you like, I just used the generic word `references.bib` but giving it a more descriptive name is probably better.
+
+
+# References
+
+
+

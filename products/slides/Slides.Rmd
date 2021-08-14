@@ -1,0 +1,41 @@
+---
+title: Example Markdown slides
+author:
+  name: Andreas Handel
+  affiliation: University of Georgia
+output: 
+  ioslides_presentation:
+    keep_md: false
+    transition: faster
+    fig_caption: true
+bibliography: ../references.bib
+csl: ../apa.csl
+---
+
+
+
+## Example slide 1
+
+This shows the result figure from the data analyis
+
+```{r analysisfig, out.width = "60%",  fig.cap='Analysis results.', echo=FALSE}
+knitr::include_graphics("../../results/resultfigure.png")
+```
+
+## Example slide 2
+
+This shows the results as table
+```{r analysistable,  fig.cap='', echo=FALSE}
+resulttable=readRDS("../../results/resulttable.rds")
+knitr::kable(resulttable)
+```
+
+## Example slide 3
+
+This paper [@Leek2015a] discusses types of analyses. 
+
+## References
+
+
+
+

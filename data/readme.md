@@ -2,7 +2,7 @@ The folders inside this folder should contain all data at various stages.
 
 You should place the raw data in the raw_data folder and do not edit it. Ever!
 
-Ideally, load the raw data into R and do all changes there with code, so everyting is automatically reproducible and documented.
+Ideally, load the raw data into R and do all changes there with code, so everything is automatically reproducible and documented.
 
 Sometimes, you need to edit the files in the format you got. For instance, Excel files are sometimes so poorly formatted that it's close to impossible to read them into R, or the persons you got the data from used color to code some information, which of course won't import into R. In those cases, you might have to make modifications in a software other than R. 
 
