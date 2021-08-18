@@ -5,21 +5,27 @@
 #and saves it as Rds file in the processed_data folder
 
 #load needed packages. make sure they are installed.
-library(readxl)
-library(dplyr)
-library(here)
+library(readxl) #for loading Excel files
+library(dplyr) #for data processing
+library(here) #to set paths
 
 #path to data
 #note the use of the here() package and not absolute paths
-data_location <- here("data","raw_data","exampledata.xlsx")
+data_location <- here::here("data","raw_data","exampledata.xlsx")
 
 #load data. 
+#note that for functions that come from specific packages (instead of base R)
+# I often specify both package and function like so
+#package::function() that's not required one could just call the function
+#specifying the package makes it clearer where the function "lives",
+#but it adds typing. You can do it either way.
 rawdata <- readxl::read_excel(data_location)
 
 #take a look at the data
 dplyr::glimpse(rawdata)
 
-#dataset is so small, we can print it
+#dataset is so small, we can print it to the screen.
+#that is often not possible.
 print(rawdata)
 
 # looks like we have measurements for height (in centimeters) and weight (in kilogram)
@@ -53,7 +59,7 @@ processeddata <- rawdata %>% dplyr::filter( Height != "sixty" ) %>%
 # http://www.sthda.com/english/wiki/saving-data-into-r-data-format-rds-and-rdata
 
 # location to save file
-save_data_location <- here("data","processed_data","processeddata.rds")
+save_data_location <- here::here("data","processed_data","processeddata.rds")
 
 saveRDS(processeddata, file = save_data_location)
 

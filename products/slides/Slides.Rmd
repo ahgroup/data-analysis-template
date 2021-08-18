@@ -14,23 +14,33 @@ csl: ../apa.csl
 
 
 
-## Example slide 1
+## Example slide 
 
-This shows the result figure from the data analyis
+This shows the summary table
 
-```{r analysisfig, out.width = "60%",  fig.cap='Analysis results.', echo=FALSE}
+```{r summarytable,  fig.cap='Summary table.', echo=FALSE, fig.align='center', out.width = "60%"}
+resulttable=readRDS("../../results/summarytable.rds")
+knitr::kable(resulttable)
+```
+
+## Example slide 
+
+This shows the figure created by the analysis script.
+
+```{r analysisfig, out.width = "80%",  fig.cap='Scatterplot.', echo=FALSE, fig.align='center'}
 knitr::include_graphics("../../results/resultfigure.png")
 ```
 
-## Example slide 2
+## Example slide 
 
-This shows the results as table
-```{r analysistable,  fig.cap='', echo=FALSE}
+This shows the model fitting results as table
+
+```{r analysistable,  fig.cap='Linear model fit results.', echo=FALSE, fig.align='center'}
 resulttable=readRDS("../../results/resulttable.rds")
 knitr::kable(resulttable)
 ```
 
-## Example slide 3
+## Example slide 
 
 This paper [@Leek2015a] discusses types of analyses. 
 
