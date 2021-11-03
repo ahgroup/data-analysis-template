@@ -8,7 +8,7 @@ output:
     keep_md: false
     transition: faster
     fig_caption: true
-bibliography: ../references.bib
+bibliography: ../dataanalysis_template_references.bib
 csl: ../apa.csl
 ---
 
@@ -28,7 +28,7 @@ knitr::kable(resulttable)
 This shows the figure created by the analysis script.
 
 ```{r analysisfig, out.width = "80%",  fig.cap='Scatterplot.', echo=FALSE, fig.align='center'}
-knitr::include_graphics("../../results/resultfigure.png")
+knitr::include_graphics("../../results/height_weight_stratified.png")
 ```
 
 ## Example slide 
@@ -36,13 +36,13 @@ knitr::include_graphics("../../results/resultfigure.png")
 This shows the model fitting results as table
 
 ```{r analysistable,  fig.cap='Linear model fit results.', echo=FALSE, fig.align='center'}
-resulttable=readRDS("../../results/resulttable.rds")
+resulttable=readRDS("../../results/resulttable2.rds")
 knitr::kable(resulttable)
 ```
 
 ## Example slide 
 
-This paper [@Leek2015a] discusses types of analyses. 
+This paper [@leek2015] discusses types of analyses. 
 
 ## References
 
