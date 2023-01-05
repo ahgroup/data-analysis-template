@@ -3,24 +3,26 @@ title: "Example Manuscript Template for a Data Analysis Project"
 subtitle: ""
 author: Andreas Handel
 date: "`r Sys.Date()`"
-site: bookdown::bookdown_site
-documentclass: article
-output:
-  bookdown::word_document2: 
+format:
+  docx:
     toc: false
-    number_sections: true
-  bookdown::html_document2: 
-    toc: false
+    number-sections: true
+    highlight-style: github
 bibliography: ../dataanalysis_template_references.bib
 csl: ../apa.csl
 ---
 
-The structure below is a possible setup for a data analysis project (including the course project). For a manuscript, adjust as needed. 
+The structure below is one possible setup for a data analysis project (including the course project). For a manuscript, adjust as needed. 
 You don't need to have exactly these sections, but the content covering those sections should be addressed.
+
+This uses MS Word as output format. [See here](https://quarto.org/docs/output-formats/ms-word.html) for more information. You can switch to other formats, like html or pdf. See [the Quarto documentation](https://quarto.org/) for other formats.
 
 
 # Summary/Abstract
 _Write a summary of your project._
+
+
+{{< pagebreak >}}
 
 
 # Introduction 
@@ -34,6 +36,11 @@ _Describe what the data is, what it contains, where it is from, etc. Eventually 
 ## Questions/Hypotheses to be addressed
 _State the research questions you plan to answer with this analysis._
 
+To cite other work (important everywhere, but likely happens first in introduction), make sure your references are in the bibtex file specified in the YAML header above (here `dataanalysis_template_references.bib`) and have the right bibtex key. Then you can include like this:
+
+Examples of reproducible research projects can for instance be found in [@mckay2020; @mckay2020a]
+
+{{< pagebreak >}}
 
 
 # Methods 
@@ -53,20 +60,25 @@ _Write code that reads in the file and cleans it so it's ready for analysis. Sin
 _Explain anything related to your statistical analyses._
 
 
+{{< pagebreak >}}
+
 
 # Results
 
 ## Exploratory/Descriptive analysis
 
-_Use a combination of text/tables/figures to explore and describe your data. Show the most important descriptive results here. Additional ones should go in the supplement. Even more can be in the R/RmD scripts._
+_Use a combination of text/tables/figures to explore and describe your data. Show the most important descriptive results here. Additional ones should go in the supplement. Even more can be in the R and Quarto files that are part of your project._
 
 
-Table \@ref(tab:summarytable) shows a table summarizing the data.
+@tbl-summarytable shows a summary of the data.
 
 
-```{r summarytable,  echo=FALSE}
+```{r}
+#| label: tbl-summarytable
+#| tbl-cap: "Data summary table."
+#| echo: FALSE
 resulttable=readRDS("../../results/summarytable.rds")
-knitr::kable(resulttable, caption = 'Data summary table.')
+knitr::kable(resulttable)
 ```
 
 
@@ -76,9 +88,12 @@ knitr::kable(resulttable, caption = 'Data summary table.')
 _To get some further insight into your data, if reasonable you could compute simple statistics (e.g. simple models with 1 predictor) to look for associations between your outcome(s) and each individual predictor variable. Though note that unless you pre-specified the outcome and main exposure, any "p<0.05 means statistical significance" interpretation is not valid._
 
 
-Figure \@ref(fig:resultfigure) shows a scatterplot figure produced by one of the R scripts.
+@fig-result shows a scatterplot figure produced by one of the R scripts.
 
-```{r resultfigure,  fig.cap='Analysis figure.', echo=FALSE}
+```{r}
+#| label: fig-result
+#| fig-cap: "Height and weight stratified by sex."
+#| echo: FALSE
 knitr::include_graphics("../../results/height_weight_stratified.png")
 ```
 
@@ -87,12 +102,18 @@ knitr::include_graphics("../../results/height_weight_stratified.png")
 
 _Use one or several suitable statistical/machine learning methods to analyze your data and to produce meaningful figures, tables, etc. This might again be code that is best placed in one or several separate R scripts that need to be well documented. You want the code to produce figures and data ready for display as tables, and save those. Then you load them here._
 
-Example table \@ref(tab:resulttable2) shows a table summarizing a linear model fit.
+Example @tbl-resulttable2 shows a summary of a linear model fit.
 
-```{r resulttable,  echo=FALSE}
-resulttable=readRDS("../../results/resulttable2.rds")
-knitr::kable(resulttable, caption = 'Linear model fit table.')
+```{r}
+#| label: tbl-resulttable2
+#| tbl-cap: "Linear model fit table."
+#| echo: FALSE
+resulttable2 = readRDS("../../results/resulttable2.rds")
+knitr::kable(resulttable2)
 ```
+
+
+{{< pagebreak >}}
 
 
 # Discussion
@@ -114,6 +135,8 @@ These papers [@mckay2020; @mckay2020a] are good examples of papers published usi
 
 Note that this cited reference will show up at the end of the document, the reference formatting is determined by the CSL file specified in the YAML header. Many more style files for almost any journal [are available](https://www.zotero.org/styles). You also specify the location of your bibtex reference file in the YAML. You can call your reference file anything you like, I just used the generic word `references.bib` but giving it a more descriptive name is probably better.
 
+
+{{< pagebreak >}}
 
 # References
 

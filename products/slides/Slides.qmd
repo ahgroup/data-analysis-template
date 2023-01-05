@@ -1,0 +1,48 @@
+---
+title: Example Quarto slides
+author: Andreas Handel
+format: revealjs
+bibliography: ../dataanalysis_template_references.bib
+csl: ../apa.csl
+---
+
+## Overview
+
+-   A few simple slides using the [`revealjs` (html) format](https://quarto.org/docs/presentations/revealjs/).
+-   For other formats (e.g. Powerpoint, or Beamer/pdf), see [here](https://quarto.org/docs/guide/).
+
+## Example slide
+
+This shows the summary table. It is pulled in as R chunk.
+
+```{r}
+#| label: tbl-summarytable
+#| tbl-cap: "Data summary table."
+#| echo: FALSE
+resulttable=readRDS("../../results/summarytable.rds")
+knitr::kable(resulttable)
+```
+
+## Example slide
+
+This shows a figure created by the analysis script. It is inserted using Markdown code (not R/knitr code chunk, but that would be possible too).
+
+![Height and weight stratified by sex.](../../results/height_weight_stratified.png){fig-alt="Height and weight stratified by sex." fig-align="center"}
+
+## Example slide
+
+This shows the model fitting results as table.
+
+```{r}
+#| label: tbl-resulttable2
+#| tbl-cap: "Linear model fit table."
+#| echo: FALSE
+resulttable2 = readRDS("../../results/resulttable2.rds")
+knitr::kable(resulttable2)
+```
+
+## Example slide with reference
+
+This paper [@leek2015] discusses types of analyses.
+
+## References

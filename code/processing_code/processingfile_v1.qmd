@@ -1,16 +1,18 @@
 ---
 title: "An example cleaning script"
 author: "Andreas Handel"
-date: "10/28/2021"
+date: "2023-01-03"
 output: html_document
 ---
 
 
 # Processing script
 
-This contains the same code and comments/information as processingscript.R
+This contains the same code and comments/information as `processingcode.R`.
 
-This just shows it as Rmd file, to give you an idea how to do it in either setup.
+This just shows it as Quarto file, to give you an idea how to do it in a setup that combines code and text in a single file.
+
+See the other Quarto file for my currently preferred approach of pulling code from the R script into the Quarto file.
 
 
 # Setup
@@ -120,6 +122,8 @@ processeddata <- d4
 
 Finally, we save the clean data as RDS file. I suggest you save your processed and cleaned data as RDS or RDA/Rdata files. 
 This preserves coding like factors, characters, numeric, etc.  If you save as CSV, that information would get lost.
+However, CSV is better for sharing with others since it's plain text. If you do CSV, you might want to write down somewhere what each variable is.
+
 See here for some suggestions on how to store your processed data:
 http://www.sthda.com/english/wiki/saving-data-into-r-data-format-rds-and-rdata
 
