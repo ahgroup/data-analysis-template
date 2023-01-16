@@ -56,6 +56,10 @@ This uses a bit of code trickery to get things into the shape of a data frame (f
 
 ```{r}
 summary_df = data.frame(do.call(cbind, lapply(mydata, summary)))
+print(summary_df)
+# another way of looking at the data
+dplyr::glimpse(mydata)
+# save to file
 summarytable_file = here("results", "summarytable.rds")
 saveRDS(summary_df, file = summarytable_file)
 ```

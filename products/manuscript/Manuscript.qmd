@@ -18,6 +18,14 @@ You don't need to have exactly these sections, but the content covering those se
 This uses MS Word as output format. [See here](https://quarto.org/docs/output-formats/ms-word.html) for more information. You can switch to other formats, like html or pdf. See [the Quarto documentation](https://quarto.org/) for other formats.
 
 
+```{r, echo=FALSE, message=FALSE}
+# load a few R packages
+library(here)
+library(knitr)
+```
+
+
+
 # Summary/Abstract
 _Write a summary of your project._
 
@@ -72,6 +80,7 @@ _Use a combination of text/tables/figures to explore and describe your data. Sho
 
 @tbl-summarytable shows a summary of the data.
 
+Note the loading of the data providing a **relative** path using the `../../` notation. (Two dots means a folder up). You never want to specify an **absolute** path like `C:\ahandel\myproject\results\` because if you share this with someone, it won't work for them since they don't have that path. You can also use the `here` R package to create paths. See examples of that below.
 
 ```{r}
 #| label: tbl-summarytable
@@ -94,7 +103,7 @@ _To get some further insight into your data, if reasonable you could compute sim
 #| label: fig-result
 #| fig-cap: "Height and weight stratified by sex."
 #| echo: FALSE
-knitr::include_graphics("../../results/height_weight_stratified.png")
+knitr::include_graphics(here("results","height_weight_stratified.png"))
 ```
 
 
@@ -108,7 +117,7 @@ Example @tbl-resulttable2 shows a summary of a linear model fit.
 #| label: tbl-resulttable2
 #| tbl-cap: "Linear model fit table."
 #| echo: FALSE
-resulttable2 = readRDS("../../results/resulttable2.rds")
+resulttable2 = readRDS(here("results","resulttable2.rds"))
 knitr::kable(resulttable2)
 ```
 

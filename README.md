@@ -16,14 +16,14 @@ This is a template for a data analysis project using R, Quarto, Github and a ref
 
 # Template content 
 
-The template comes with a few files that are meant as illustrative examples of the kinds of content you would place in the different folders. 
+The template comes with a few files that are meant as illustrative examples of the kinds of content you would place in the different folders. See the `readme` files in each folder for more details.
 
 * There is a simple, made-up dataset in the `raw_data` folder. 
-* The `processing_code` folder contains a single R script which loads the raw data, performs a bit of cleaning, and saves the result in the `processed_data` folder.
-* The `analysis_code` folder contains an R script which loads the processed data, fits a simple model, and produces a figure and some numeric output, which is saved in the `results` folder.
-* The `products` folder contains an example `bibtex` and CSL style file for references. Those files are used by the example manuscript, poster and slides.
-* The `poster` and `slides` folders contain very basic examples of posters and slides made with Quarto. Note that especially for slides, there are many different formats. You might find a different format more suitable. Check the Quarto documentation. 
-* The  `manuscript` folder contains a template for a report written as Quarto file. If you access this repository as part of [my Modern Applied Data Science course](https://andreashandel.github.io/MADAcourse/), the sections are guides for your project. If you found your way to this repository outside the course, you might only be interested in seeing how the file pulls in results and references and generates a word document as output, without paying attention to the detailed structure.
+* The `processing_code` folder contains several files that load the raw data, perform a bit of cleaning, and save the result in the `processed_data` folder. 
+* The `analysis_code` folder contains several files that load the processed data, do an exploratory analysis, and fit a simple model. These files produce figures and some numeric output (tables), which are saved to the `results` folder.
+* The `products` folder contains an example `bibtex` and CSL style files for references. Those files are used by the example manuscript and slides.
+* The  `manuscript` folder contains a template for a report written as Quarto file. If you access this repository as part of [my Modern Applied Data Science course](https://andreashandel.github.io/MADAcourse/), the sections are guides for your project. If you found your way to this repository outside the course, you might only be interested in seeing how the file pulls in results and references and generates a word document as output, without paying attention to the detailed structure. There is also a sub-folder containing an example template for a supplementary material file.
+* The `slides` folder contains a basic example of slides made with Quarto. 
 
 
 # Getting started

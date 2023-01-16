@@ -9,9 +9,19 @@ format:
     toc: false
     number-sections: true
     highlight-style: github
-bibliography: ../dataanalysis_template_references.bib
-csl: ../vancouver.csl
+bibliography: ../../dataanalysis_template_references.bib
+csl: ../../vancouver.csl
 ---
+
+
+```{r, echo=FALSE, message=FALSE}
+# load a few R packages
+library(here)
+library(knitr)
+```
+
+
+
 
 This shows some materials that could go into a supplementary file. Often you want/need references here too. You can use the same reference bib file for this and the main text (as done here) or have separate bib files.
 
@@ -56,7 +66,7 @@ Show additional results here. Those can be some useful exploratory/descriptive f
 #| label: tbl-resulttable1
 #| tbl-cap: "Another fit table."
 #| echo: FALSE
-resulttable1 = readRDS("../../results/resulttable1.rds")
+resulttable1 = readRDS(here("results","resulttable1.rds"))
 knitr::kable(resulttable1)
 ```
 
@@ -69,7 +79,7 @@ knitr::kable(resulttable1)
 #| label: fig-result2
 #| fig-cap: "Height and weight."
 #| echo: FALSE
-knitr::include_graphics("../../results/height_weight.png")
+knitr::include_graphics(here("results","height_weight.png"))
 ```
 
 
