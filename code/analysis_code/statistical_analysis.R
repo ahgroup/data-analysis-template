@@ -39,9 +39,9 @@ saveRDS(lmtable1, file = table_file1)
 
 ############################
 #### Second model fit
-# fit linear model using height as outcome, weight and sex as predictor
+# fit linear model using height as outcome, weight and gender as predictor
 
-lmfit2 <- lm(Height ~ Weight + Sex, mydata)  
+lmfit2 <- lm(Height ~ Weight + Gender, mydata)  
 
 # place results from fit into a data frame with the tidy function
 lmtable2 <- broom::tidy(lmfit2)

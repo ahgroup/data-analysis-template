@@ -25,9 +25,9 @@ knitr::kable(resulttable)
 
 ## Example slide
 
-This shows a figure created by the analysis script. It is inserted using Markdown code (not R/knitr code chunk, but that would be possible too).
+This shows a figure created by the analysis script. It is inserted using Markdown (not knitr code, but that would be possible too).
 
-![Height and weight stratified by sex.](../../results/height_weight_stratified.png){fig-alt="Height and weight stratified by sex." fig-align="center"}
+![](images/height_weight.png){fig-align="center" width="420"}
 
 ## Example slide
 

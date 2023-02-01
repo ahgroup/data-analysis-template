@@ -101,7 +101,7 @@ _To get some further insight into your data, if reasonable you could compute sim
 
 ```{r}
 #| label: fig-result
-#| fig-cap: "Height and weight stratified by sex."
+#| fig-cap: "Height and weight stratified by gender."
 #| echo: FALSE
 knitr::include_graphics(here("results","height_weight_stratified.png"))
 ```

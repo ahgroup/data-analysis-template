@@ -30,6 +30,11 @@ data_location <- here::here("data","raw_data","exampledata.xlsx")
 #but it adds typing. You can do it either way.
 rawdata <- readxl::read_excel(data_location)
 
+# We can look in the Codebook (second tab) for a variable explanation
+codebook <- readxl::read_excel(data_location, sheet ="Codebook")
+print(codebook)
+
+
 ## ---- exploredata --------
 #take a look at the data
 dplyr::glimpse(rawdata)
@@ -43,10 +48,6 @@ head(rawdata)
 #this is a nice way to look at data
 skimr::skim(rawdata)
 
-# looks like we have the following data
-# height (seems like it's in centimeters) 
-# weight (seems to be in kilogram)
-# Sex
 
 
 
@@ -72,8 +73,10 @@ hist(d1$Height)
 ## ---- cleandata2 --------
 # Now we see that there is one person with a height of 6. 
 # that could be a typo, or someone mistakenly entered their height in feet.
-# Since we unfortunately don't know, we might need to remove this person, which we'll do here.
-d2 <- d1 %>% dplyr::filter(Height != 6)
+# If we don't know, we might need to remove this person.
+# But let's assume that we somehow know that this is meant to be 6 feet, so we can convert to centimeters.
+d2 <- d1 %>% dplyr::mutate( Height = replace(Height, Height=="6",round(6*30.48,0)) )
+
 
 #height values seem ok now
 skimr::skim(d2)
@@ -83,24 +86,33 @@ skimr::skim(d2)
 # now let's look at weight
 # there is a person with weight of 7000, which is impossible,
 # and one person with missing weight.
-# to be able to analyze the data, we'll remove those individuals as well
+# Note that the original data had an empty cell. 
+# The codebook says that's not allowed, it should have been NA.
+# R automatically converts empty values to NA.
+# If you don't want that, you can adjust it when you load the data.
+# to be able to analyze the data, we'll remove those individuals as well.
+# Note: Some analysis methods can deal with missing values, so it's not always necessary to remove them. 
+# This should be adjusted based on your planned analysis approach. 
 d3 <- d2 %>%  dplyr::filter(Weight != 7000) %>% tidyr::drop_na()
 skimr::skim(d3)
 
 
 ## ---- cleandata4 --------
-# last problems is that Sex should be a categorical/factor variable
+# We also want to have Gender coded as a categorical/factor variable
 # we can do that with simple base R code to mix things up
-d3$Sex <- as.factor(d3$Sex)  
+d3$Gender <- as.factor(d3$Gender)  
 skimr::skim(d3)
 
 
 ## ---- cleandata5 --------
 #now we see that there is another NA, but it's not "NA" from R 
-#instead it was loaded as character and is now considered as a category
-#well proceed here by removing that individual
-#since this keeps an empty category for Sex, I'm also using droplevels() to get rid of it
-d4 <- d3 %>% dplyr::filter(Sex != "NA") %>% droplevels()
+#instead it was loaded as character and is now considered as a category.
+#There is also an individual coded as "N" which is not allowed.
+#This could be mistyped M or a mistyped NA. If we have a good guess, we could adjust.
+#If we don't we might need to remove that individual.
+#well proceed here by removing both the NA and N individuals
+#since this keeps an empty category, I'm also using droplevels() to get rid of it
+d4 <- d3 %>% dplyr::filter( !(Gender %in% c("NA","N")) ) %>% droplevels()
 skimr::skim(d4)
 
 

@@ -48,17 +48,7 @@ but it adds typing. You can do it either way.
 Several ways of looking at the data
 
 ```{r, exploredata}
-dplyr::glimpse(rawdata)
-summary(rawdata)
-head(rawdata)
-skimr::skim(rawdata)
 ```
-
-Looks like we have the following data:
-
-* height (seems like it's in centimeters) 
-* weight (seems to be in kilogram)
-* Sex
 
 
 # Cleaning
@@ -88,14 +78,10 @@ Note that removing anyone who had "faulty" or missing data is one approach. It's
 ```{r, cleandata3}
 ```
 
-Now checking the `Sex` variable. Sex should be a categorical/factor variable but is loaded as character. We can fix that with simple base R code to mix things up.
+Now checking the `Gender` variable. 
 
 ```{r, cleandata4}
 ```
-
-
-Now we see that there is another NA, but it's not `NA` from R, instead it was loaded as character and is now considered as a category.
-Well proceed here by removing that individual with that NA entry. Since this keeps an empty category for Sex, I'm also using droplevels() to get rid of it.
 
 ```{r, cleandata5}
 ```

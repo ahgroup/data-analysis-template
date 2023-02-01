@@ -31,6 +31,7 @@ Plots produced here can be scatterplots, boxplots, violinplots, etc. Tables can 
 #load needed packages. make sure they are installed.
 library(here) #for data loading/saving
 library(dplyr)
+library(skimr)
 library(ggplot2)
 ```
 
@@ -52,13 +53,10 @@ mydata <- readRDS(data_location)
 
 Showing a bit of code to produce and save a summary table.
 
-This uses a bit of code trickery to get things into the shape of a data frame (for easier saving/showing in manuscript)
 
 ```{r}
-summary_df = data.frame(do.call(cbind, lapply(mydata, summary)))
+summary_df = skimr::skim(mydata)
 print(summary_df)
-# another way of looking at the data
-dplyr::glimpse(mydata)
 # save to file
 summarytable_file = here("results", "summarytable.rds")
 saveRDS(summary_df, file = summarytable_file)
@@ -98,10 +96,10 @@ figure_file = here("results","height_weight.png")
 ggsave(filename = figure_file, plot=p3) 
 ```
 
-Once more height as function of weight, stratified by sex.
+Once more height as function of weight, stratified by gender. Note that there is so little data, it's a bit silly. But we'll plot it anyway.
 
 ```{r}
-p4 <- mydata %>% ggplot(aes(x=Height, y=Weight, color = Sex)) + geom_point() + geom_smooth(method='lm')
+p4 <- mydata %>% ggplot(aes(x=Height, y=Weight, color = Gender)) + geom_point() + geom_smooth(method='lm')
 plot(p4)
 figure_file = here("results","height_weight_stratified.png")
 ggsave(filename = figure_file, plot=p4) 
