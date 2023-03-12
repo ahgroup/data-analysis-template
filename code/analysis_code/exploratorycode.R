@@ -40,5 +40,5 @@ p4 <- mydata %>% ggplot(aes(x=Height, y=Weight, color = Gender)) + geom_point() 
 plot(p4)
 figure_file = here("results","height_weight_stratified.png")
 ggsave(filename = figure_file, plot=p4) 
-ggsave(filename = figure_file, plot=p3) 
+
 
