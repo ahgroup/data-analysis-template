@@ -30,12 +30,12 @@ plot(p2)
 figure_file = here("results","weight_distribution.png")
 ggsave(filename = figure_file, plot=p2) 
 
-## ---- function1 --------
+## ---- fitfig1 --------
 p3 <- mydata %>% ggplot(aes(x=Height, y=Weight)) + geom_point() + geom_smooth(method='lm')
 plot(p3)
 figure_file = here("results","height_weight.png")
 
-## ---- bygender --------
+## ---- fitfig2 --------
 p4 <- mydata %>% ggplot(aes(x=Height, y=Weight, color = Gender)) + geom_point() + geom_smooth(method='lm')
 plot(p4)
 figure_file = here("results","height_weight_stratified.png")

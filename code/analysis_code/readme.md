@@ -1,14 +1,12 @@
-This folder contains code to do some simple analysis on the processed/cleaned data.
+This folder contains code to do some simple exploratory analysis on the processed/cleaned data.
+The code produces a few tables and figures, which are saved in the `results` folder.
 
+It's the same code done 3 times:
 
-There is a Quarto file which does some exploratory data analysis by creating a few tables and figures.
+* First, there is an R script that you can run which does all the computations.
+* Second, there is a Quarto file which contains exactly the same code as the R script.
+* Third, my current favorite, is a Quarto file with an approach where the code is pulled in from the R script and run.
 
-An R script does some simple statistical model fitting.
+The last version has the advantage of having code in one place for easy writing/debugging, and then being able to pull the code into the Quarto file for a nice combination of text/commentary and code.
 
-I'm only showing code here in way where the code is included in the Quarto file, and the R script is by itself and not combined with a Quarto file. 
-
-As described in the `processing_code` materials, I currently prefer the approach of having R code in a separate file and pulling it into a Quarto file.
-
-So if I were to re-do this, I would have 2 R scripts that can run by themselves, and 2 Quarto files that pull in the code for easier combination of text and code.
-I just haven't gotten around to writing them. Feel free to redo and send a pull request on GitHub :)
-
+Each way of doing this is a reasonable approach, pick whichever one you prefer or makes the most sense for your setup. Whichever approach you choose, add ample documentation/commentary so you and others can easily understand what's going on and what is done.
