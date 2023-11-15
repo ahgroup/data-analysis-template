@@ -1,0 +1,86 @@
+---
+title: "An example exploratory analysis script with code pulled in"
+author: "Yao Lu, Andreas Handel"
+date: "2023-03-13"
+output: html_document
+---
+
+  
+  
+This Quarto file loads the cleaned data and does some exploring.
+
+This is essentially the same as the other `exploratory_analysis` Quarto file, but now the code is not inside this file. Instead, it is pulled in from the R script `exploratorycode.R` using the code chunk labels.
+
+Also note that while here I split cleaning and exploring, this is iterative. You saw that as part of the processing, we already had to explore the data somewhat to understand how to clean it. In general, as you explore, you'll find things that need cleaning. As you clean, you can explore more. Therefore, at times it might make more sense to combine the cleaning and exploring code parts into a single R or Quarto file. Or split things in any other logical way.
+
+As part of the exploratory analysis, you should produce plots or tables or other summary quantities for the most interesting/important quantities in your data. Depending on the total number of variables in your dataset, explore all or some of the others. Figures produced here might be histograms or density plots, correlation plots, etc. Tables might summarize your data.
+
+Start by exploring one variable at a time. Then continue by creating plots or tables of the outcome(s) of interest and the predictor/exposure/input variables you are most interested in. If your dataset is small, you can do that for all variables. 
+
+Plots produced here can be scatterplots, boxplots, violinplots, etc. Tables can be simple 2x2 tables or larger ones.
+
+
+
+# Setup
+Load the chunk.
+
+```{r, include=FALSE, cache=FALSE}
+knitr::read_chunk('exploratorycode.R')
+```
+
+Load the packages.
+```{r,packages, echo=FALSE,message=FALSE}
+```
+
+
+Load the data.
+
+```{r,loaddata}
+```
+
+
+
+
+
+# Data exploration through tables
+
+Showing a bit of code to produce and save a summary table.
+
+
+```{r,table1}
+```
+
+We are saving the results to the `results` folder. Depending on how many tables/figures you have, it might make sense to have separate folders for each. And/or you could have separate folders for exploratory tables/figures and for final tables/figures. Just choose a setup that makes sense for your project and works for you, and provide enough documentation that someone can understand what you are doing.
+
+
+# Data exploration through figures
+
+Histogram plots for the continuous outcomes. 
+
+Height first.
+
+```{r,height}
+```
+
+Now weights.
+
+```{r,weight}
+```
+
+Now height as function of weight.
+
+```{r,fitfig1}
+```
+
+Once more height as function of weight, stratified by gender. Note that there is so little data, it's a bit silly. But we'll plot it anyway.
+
+```{r,fitfig2}
+```
+
+
+
+# Notes
+
+For your own explorations, tables and figures can be "quick and dirty". As long as you can see what's going on, there is no need to polish them. That's in contrast to figures you'll produce for your final products (paper, report, presentation, website, etc.). Those should look as nice, polished and easy to understand as possible.
+
+
