@@ -9,8 +9,8 @@ format:
     toc: false
     number-sections: true
     highlight-style: github
-bibliography: ../../dataanalysis_template_references.bib
-csl: ../../vancouver.csl
+bibliography: ../../assets/dataanalysis_template_references.bib
+csl: ../../assets/vancouver.csl
 ---
 
 

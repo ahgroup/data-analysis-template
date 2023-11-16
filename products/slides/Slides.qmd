@@ -2,8 +2,8 @@
 title: Example Quarto slides
 author: Andreas Handel
 format: revealjs
-bibliography: ../dataanalysis_template_references.bib
-csl: ../apa.csl
+bibliography: ../assets/dataanalysis_template_references.bib
+csl: ../assets/apa.csl
 ---
 
 ## Overview

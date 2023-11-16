@@ -30,3 +30,6 @@
 
 # MacOS specific .DS_Store files
 .DS_Store
+
+# Folder for large files
+results/largefiles/
