@@ -1,9 +1,8 @@
 ---
 title: Example Quarto slides
-author: Andreas Handel
 format: revealjs
-bibliography: ../assets/dataanalysis_template_references.bib
-csl: ../assets/apa.csl
+bibliography: ../../assets/dataanalysis-references.bib
+csl: ../../assets/apa.csl
 ---
 
 ## Overview
@@ -19,7 +18,7 @@ This shows the summary table. It is pulled in as R chunk.
 #| label: tbl-summarytable
 #| tbl-cap: "Data summary table."
 #| echo: FALSE
-resulttable=readRDS(here::here("results","summarytable.rds"))
+resulttable=readRDS(here::here("results","tables","summarytable.rds"))
 knitr::kable(resulttable)
 ```
 
@@ -27,7 +26,7 @@ knitr::kable(resulttable)
 
 This shows a figure created by the analysis script. It is inserted using Markdown (not knitr code, but that would be possible too).
 
-![](images/height_weight.png){fig-align="center" width="420"}
+![](../../results/figures/height-weight.png){fig-align="center" width="420"}
 
 ## Example slide
 
@@ -37,7 +36,7 @@ This shows the model fitting results as table.
 #| label: tbl-resulttable2
 #| tbl-cap: "Linear model fit table."
 #| echo: FALSE
-resulttable2 = readRDS(here::here("results","resulttable2.rds"))
+resulttable2 = readRDS(here::here("results","tables","resulttable2.rds"))
 knitr::kable(resulttable2)
 ```
 

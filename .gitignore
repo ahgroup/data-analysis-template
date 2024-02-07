@@ -35,4 +35,4 @@
 results/large-files/*
 
 # But we want to commit the folder and the readme!
-!results/large-files/README.md
+!results/large-files/readme.md

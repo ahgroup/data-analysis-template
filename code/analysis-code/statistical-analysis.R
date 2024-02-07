@@ -11,7 +11,7 @@ library(here) #for data loading/saving
 
 #path to data
 #note the use of the here() package and not absolute paths
-data_location <- here::here("data","processed_data","processeddata.rds")
+data_location <- here::here("data","processed-data","processeddata.rds")
 
 #load data. 
 mydata <- readRDS(data_location)
@@ -34,7 +34,7 @@ lmtable1 <- broom::tidy(lmfit1)
 print(lmtable1)
 
 # save fit results table  
-table_file1 = here("results", "resulttable1.rds")
+table_file1 = here("results", "tables", "resulttable1.rds")
 saveRDS(lmtable1, file = table_file1)
 
 ############################
@@ -50,7 +50,7 @@ lmtable2 <- broom::tidy(lmfit2)
 print(lmtable2)
 
 # save fit results table  
-table_file2 = here("results", "resulttable2.rds")
+table_file2 = here("results", "tables", "resulttable2.rds")
 saveRDS(lmtable2, file = table_file2)
 
   

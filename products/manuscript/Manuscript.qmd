@@ -103,7 +103,7 @@ Note the loading of the data providing a **relative** path using the `../../` no
 #| label: tbl-summarytable
 #| tbl-cap: "Data summary table."
 #| echo: FALSE
-resulttable=readRDS("../../results/summarytable.rds")
+resulttable=readRDS("../../results/tables/summarytable.rds")
 knitr::kable(resulttable)
 ```
 
@@ -120,7 +120,7 @@ _To get some further insight into your data, if reasonable you could compute sim
 #| label: fig-result
 #| fig-cap: "Height and weight stratified by gender."
 #| echo: FALSE
-knitr::include_graphics(here("results","height-weight-stratified.png"))
+knitr::include_graphics(here("results","figures","height-weight-stratified.png"))
 ```
 
 
@@ -134,7 +134,7 @@ Example @tbl-resulttable2 shows a summary of a linear model fit.
 #| label: tbl-resulttable2
 #| tbl-cap: "Linear model fit table."
 #| echo: FALSE
-resulttable2 = readRDS(here("results","tables-files","resulttable2.rds"))
+resulttable2 = readRDS(here("results","tables","resulttable2.rds"))
 knitr::kable(resulttable2)
 ```
 

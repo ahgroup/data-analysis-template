@@ -1,3 +1,5 @@
+# products
+
 The folders inside this folder should contain all the products of your project.
 
 For a classical academic project, this will be a peer-reviewed manuscript. 
@@ -7,7 +9,7 @@ Most manuscripts these days have supplementary material, place those into the `s
 
 Often, you might make slides for an oral presentation, place those in the `slides` folder. 
 
-If any figure or other file is created by running code, it should go into a subfolder inside `/results`. If something is generated manually, e.g. a diagram using biorender, place it in the appropriate `assets` folder inside `products`. As needed, make new (sub)-folders.
+If any figure or other file is created by running code, it should go into a subfolder inside `/results`. If something is generated manually, e.g. a diagram using biorender, place it in the appropriate `assets` folder. As needed, make new (sub)-folders.
 
 Often you need a library of references in bibtex format, as well as a CSL style file that determines reference formatting. Those files might be used by several of the products, They should be placed into the `assets` folder.
 

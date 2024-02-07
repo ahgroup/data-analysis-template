@@ -1,6 +1,5 @@
 ---
 title: "Supplement to Example Manuscript Template for a Data Analysis Project"
-
 subtitle: ""
 author: Andreas Handel
 date: "`r Sys.Date()`"
@@ -9,8 +8,8 @@ format:
     toc: false
     number-sections: true
     highlight-style: github
-bibliography: ../../assets/dataanalysis_template_references.bib
-csl: ../../assets/vancouver.csl
+bibliography: ../../../assets/dataanalysis-references.bib
+csl: ../../../assets/vancouver.csl
 ---
 
 
@@ -66,7 +65,7 @@ Show additional results here. Those can be some useful exploratory/descriptive f
 #| label: tbl-resulttable1
 #| tbl-cap: "Another fit table."
 #| echo: FALSE
-resulttable1 = readRDS(here("results","resulttable1.rds"))
+resulttable1 = readRDS(here("results","tables","resulttable1.rds"))
 knitr::kable(resulttable1)
 ```
 
@@ -79,7 +78,7 @@ knitr::kable(resulttable1)
 #| label: fig-result2
 #| fig-cap: "Height and weight."
 #| echo: FALSE
-knitr::include_graphics(here("results","height_weight.png"))
+knitr::include_graphics(here("results","figures","height-weight.png"))
 ```
 
 

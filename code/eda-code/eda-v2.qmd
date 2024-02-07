@@ -1,7 +1,6 @@
 ---
 title: "An example exploratory analysis script with code pulled in"
-author: "Yao Lu, Andreas Handel"
-date: "2023-03-13"
+date: "2024-02-07"
 output: html_document
 ---
 
@@ -25,7 +24,7 @@ Plots produced here can be scatterplots, boxplots, violinplots, etc. Tables can 
 Load the chunk.
 
 ```{r, include=FALSE, cache=FALSE}
-knitr::read_chunk('exploratorycode.R')
+knitr::read_chunk('edacode.R')
 ```
 
 Load the packages.

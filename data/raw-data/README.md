@@ -1,6 +1,10 @@
-This folder contains a simple made-up data-set in an Excel file.
+#raw-data
 
-It contains the variables `Height`, `Weight` and `Gender` of a few imaginary individuals.
+This folder should contain all raw data. As needed add sub-folders.
+
+Currently, as an example, it contains a simple made-up data-set in an Excel file.
+
+The dataset contains the variables `Height`, `Weight` and `Gender` of a few imaginary individuals.
 
 The dataset purposefully contains some faulty entries that need to be cleaned.
 
