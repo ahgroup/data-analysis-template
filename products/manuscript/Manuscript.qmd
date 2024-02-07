@@ -8,8 +8,8 @@ format:
     toc: false
     number-sections: true
     highlight-style: github
-bibliography: ../assets/dataanalysis-references.bib
-csl: ../assets/apa.csl
+bibliography: ../../assets/dataanalysis-references.bib
+csl: ../../assets/apa.csl
 ---
 
 The structure below is one possible setup for a data analysis project (including the course project). For a manuscript, adjust as needed. 
@@ -67,7 +67,7 @@ We store those figures in the `assets` folder.
 #| label: fig-schematic
 #| fig-cap: "A figure that is manually generated and shows some overview/schematic. This has nothing to do with the data, it's just a random one from one of our projects I found and placed here."
 #| echo: FALSE
-knitr::include_graphics(here("products","assets","antigen-recognition.png"))
+knitr::include_graphics(here("assets","antigen-recognition.png"))
 ```
 
 
@@ -97,7 +97,7 @@ _Use a combination of text/tables/figures to explore and describe your data. Sho
 
 @tbl-summarytable shows a summary of the data.
 
-Note the loading of the data providing a **relative** path using the `../../` notation. (Two dots means a folder up). You never want to specify an **absolute** path like `C:\ahandel\myproject\results\` because if you share this with someone, it won't work for them since they don't have that path. You can also use the `here` R package to create paths. See examples of that below.
+Note the loading of the data providing a **relative** path using the `../../` notation. (Two dots means a folder up). You never want to specify an **absolute** path like `C:\ahandel\myproject\results\` because if you share this with someone, it won't work for them since they don't have that path. You can also use the `here` R package to create paths. See examples of that below. I generally recommend the `here` package.
 
 ```{r}
 #| label: tbl-summarytable
