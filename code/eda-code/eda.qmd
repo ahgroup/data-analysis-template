@@ -57,7 +57,7 @@ Showing a bit of code to produce and save a summary table.
 summary_df = skimr::skim(mydata)
 print(summary_df)
 # save to file
-summarytable_file = here("results", "summarytable.rds")
+summarytable_file = here("results", "tables", "summarytable.rds")
 saveRDS(summary_df, file = summarytable_file)
 ```
 
@@ -73,7 +73,7 @@ Height first.
 ```{r}
 p1 <- mydata %>% ggplot(aes(x=Height)) + geom_histogram() 
 plot(p1)
-figure_file = here("results","height-distribution.png")
+figure_file = here("results", "figures","height-distribution.png")
 ggsave(filename = figure_file, plot=p1) 
 ```
 
@@ -82,7 +82,7 @@ Now weights.
 ```{r}
 p2 <- mydata %>% ggplot(aes(x=Weight)) + geom_histogram() 
 plot(p2)
-figure_file = here("results","weight-distribution.png")
+figure_file = here("results", "figures","weight-distribution.png")
 ggsave(filename = figure_file, plot=p2) 
 ```
 
@@ -91,7 +91,7 @@ Now height as function of weight.
 ```{r}
 p3 <- mydata %>% ggplot(aes(x=Height, y=Weight)) + geom_point() + geom_smooth(method='lm')
 plot(p3)
-figure_file = here("results","height-weight.png")
+figure_file = here("results", "figures", "height-weight.png")
 ggsave(filename = figure_file, plot=p3) 
 ```
 
@@ -100,7 +100,7 @@ Once more height as function of weight, stratified by gender. Note that there is
 ```{r}
 p4 <- mydata %>% ggplot(aes(x=Height, y=Weight, color = Gender)) + geom_point() + geom_smooth(method='lm')
 plot(p4)
-figure_file = here("results","height-weight-stratified.png")
+figure_file = here("results", "figures", "height-weight-stratified.png")
 ggsave(filename = figure_file, plot=p4) 
 ```
 
