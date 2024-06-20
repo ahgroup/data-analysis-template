@@ -1,0 +1,141 @@
+---
+title: Quantification of influenza antibody vaccine responses accounting for both vaccine strength and breadth
+author:
+  - name: Amanda Skarlupka
+    affil: 1
+  - name: Zane Billings
+    affil: 1
+  - name: Ted Ross
+    affil: 1,2
+  - name: Andreas Handel
+    affil: 1
+affiliation:
+  - num: 1
+    address: Department of Epidemiology and Biostatistics, University of Georgia
+  - num: 2
+    address: Cleveland Clinic’s Florida Research and Innovation Center
+column_numbers: 2
+primary_colour: "#BA0C2F"
+#titletext_fontfamily: "Roboto"
+#font_family: "Roboto"
+body_textsize: "36px"
+logoright_name: "figures/logo.png"
+logoleft_name: "figures/logo.png"
+poster_height: "46in"
+poster_width: "32in"
+output: 
+  posterdown::posterdown_html:
+    self_contained: false
+knit: pagedown::chrome_print    
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(flextable)
+mediapath = "products/poster/figures"
+```
+<style>
+.logo_left, .logo_right {
+ width: 15%;
+ height: 70%;
+ padding-top: 1em;
+}
+.poster_title {
+width: 70%;
+padding-top: 1em;
+}
+body {
+text-align: left;
+}
+p.caption {
+  font-size: 0.9em;
+}
+.special {
+  font-size: 0.94em
+}
+</style>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+
+# Background
+
+* For future universal influenza vaccine candidates, it will be important to quantify protective immunity against not just the vaccine components, but a broad range of genetically different influenza strains.
+* HAI antibody titer is the most commonly used correlate of protection for influenza.
+* To determine vaccine **strength**, HAI increase or post-HAI titers against the homologous vaccine components are measured.
+* To determine vaccine **breadth**, HAI titers against heterologous strains are measured.
+* Unless the panel of heterologous strains are the same, it is difficult to compare between vaccines/studies.
+* Quantifying homologous **strength**, heterologous **breadth**, and **total** vaccine response will be useful.
+
+# Approach
+
+* We analyzed HAI data pre- and post-vaccination for vaccine and heterologous strains from the UGAFluVac cohort study. 
+* We determined the distance between vaccine strains and heterologous test strains using 3 measures: 1) Years, 2) Genetic Distance, 3) Antigenic Distance.
+* We fitted linear models and computed intercept, slope, and area under the titer increase curve to determine **strength**, **breadth** and **total** vaccine response.
+* We illustrated how this framework can be applied to compare Standard Dose (SD) with High Dose (HD) Fluzone vaccines.
+
+
+# Distance measure comparison
+
+<!-- We first explored the impact of the different strain distance measures on estimates for strength, breadth and total vaccine response. -->
+
+```{r figstrains, out.width='100%', fig.cap="HAI titers for the three distance measures: 1) Years; 2) Genetic distance as quantified by p-epitope; 3) Antigenic distance quantified by shortest path on an antigenic cartography map. Each distance measure was normalized to have comparable ranges between 0 and 1. (Homologous) Strength = Intercept of fitted line. (Heterologous) Breadth = Slope of fitted line. Total response = Area under the curve/line. Standard dose vaccine recipients only."}
+knitr::include_graphics(here::here(mediapath,"p1.png"))
+```
+
+
+```{r, tabstrains, eval = FALSE}
+#| tab.topcaption:	FALSE
+readRDS(here::here(mediapath,"wide-table.Rds")) |>
+  flextable::set_caption("Summary statistics for HAI titer increase for all influenza A vaccine strains in the dataset. A value closer to zero for breadth indicates a more broad response, i.e., a response that doesn't decline as quickly as strains become more distant.") |>
+  flextable::fontsize(size = 28, part = "all") |>
+  flextable::padding(padding.left = 15) |>
+  flextable::padding(padding.right = 15) |>
+  flextable::padding(padding.top = 3) |>
+  flextable::padding(padding.bottom = 3)
+```
+
+
+
+# Dose comparison example
+
+<!-- We applied the above defined vaccine quantification measures to compare the impact of standard- versus high-dose Fluzone vaccines. -->
+
+```{r figsdhd, out.width='100%', fig.cap="Strength, breadth and total amounts of HAI titer increase for standard dose (SD) and high dose (HD) vaccine recipients. Only individuals 65 years and above are included."}
+knitr::include_graphics(here::here(mediapath,"p2.png"))
+```
+
+```{r, tabdose, eval = FALSE}
+#| tab.topcaption:	FALSE
+readRDS(here::here(mediapath,"dose-table.Rds")) |>
+  flextable::set_caption("Comparison of HD and SD vaccine formulations. Shown is the difference (HD - SD) of each of the three outcome measures. Positive values indicate a stronger and broader HD response, negative values indicate that SD is superior.") |>
+  flextable::fontsize(size = 28, part = "all") |>
+  flextable::padding(padding.left = 15) |>
+  flextable::padding(padding.right = 15) |>
+  flextable::padding(padding.top = 3) |>
+  flextable::padding(padding.bottom = 3)
+```
+
+
+# Extensions
+
+* Multi-level statistical models might help further refine the estimates.
+* Models that are more flexible than linear models can be explored.
+* Interaction between **strength** and **breadth** needs consideration.
+* Different weighting for **total** response calculations are possible.
+
+```{r fig3, out.width='60%', fig.cap=""}
+knitr::include_graphics(here::here(mediapath,"p3.png"))
+```
+
+
+
+
+
+# Acknowledgements
+<div class="special">
+This project is partially supported by NIH contract 75N93019C00060.
+</div>
+
+

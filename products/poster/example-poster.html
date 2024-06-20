@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!--
+Font-awesome icons ie github or twitter
+-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/brands.css" integrity="sha384-n9+6/aSqa9lBidZMRCQHTHKJscPq6NW4pCQBiMmHdUCvPN8ZOg2zJJTkC7WIezWv" crossorigin="anonymous">
+
+<!--
+Google fonts api stuff
+-->
+
+
+
+<title>Quantification of influenza antibody vaccine responses accounting for both vaccine strength and breadth</title>
+
+
+
+
+
+
+<style>
+@page {
+size: 32in 46in;
+margin: 0;
+padding: 0;
+}
+body {
+margin: 0;
+font-size: 36px;
+width: 32in;
+height: 46in;
+padding: 0;
+text-align: justify;
+font-family: Palatino;
+}
+.poster_wrap {
+width: 32in;
+height: 46in;
+padding: 0cm;
+}
+.title_container {
+width: 32in;
+height: calc(46in * 0.15);
+overflow: hidden;
+background-color: #BA0C2F;
+border: 0 solid #0b4545;
+}
+.logo_left {
+float: left;
+width: 10%;
+height: 100%;
+background-color: #BA0C2F;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.logo_right {
+float: right;
+width: 10%;
+height: 100%;
+background-color: #BA0C2F;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.poster_title {
+text-align: center;
+position: relative;
+float: left;
+width: 80%;
+height: 100%;
+color: #FFFFFF;
+top: 50%;
+transform: translateY(-50%);
+-webkit-transform: translateY(-50%);
+}
+#title {
+font-family: Palatino;
+}
+/* unvisited link */
+a:link {
+color: #cc0000;
+}
+.mybreak {
+  break-before: column;
+}
+/* visited link */
+a:visited {
+color: #cc0000;
+}
+
+/* mouse over link */
+a:hover {
+color: #cc0000;
+}
+
+/* selected link */
+a:active {
+color: #cc0000;
+}
+.poster_body {
+-webkit-column-count: 2; /* Chrome, Safari, Opera */
+-moz-column-count: 2; /* Firefox */
+column-count: 2;
+-webkit-column-fill: auto;
+-moz-column-fill: auto;
+column-fill: auto;
+-webkit-column-rule-width: 1mm;
+-moz-column-rule-width: 1mm;
+column-rule-width: 1mm;
+-webkit-column-rule-style: dashed;
+-moz-column-rule-style: dashed;
+column-rule-style: dashed;
+-webkit-column-rule-color: #BA0C2F;
+-moz-column-rule-color: #BA0C2F;
+column-rule-color: #BA0C2F;
+column-gap: 1em;
+padding-left: 0.5em;
+padding-right: 0.5em;
+height: 100%;
+color: #000000
+background-color: #ffffff;
+}
+.poster_title h1 {
+font-size: 75pt;
+margin: 0;
+border: 0;
+font-weight: normal;
+}
+.poster_body_wrap{
+width: calc(32in + 0 + 0);
+height: calc(46in * 0.83);
+padding-top: calc(46in * 0.005);
+padding-bottom: calc(46in * 0.01);
+background-color: #ffffff;
+}
+.poster_title h3 {
+color: #ffffff;
+font-size: 50pt;
+margin: 0;
+border: 0;
+font-weight: normal;
+}
+.poster_title h3 > sup {
+  font-size: 35pt;
+  margin-left: 0.02em;
+}
+.poster_title h5 {
+color: #FFFFFF;
+font-size: 35pt;
+margin: 0;
+border: 0;
+font-weight: normal;
+}
+img {
+margin-top: 2cm;
+margin-bottom: 0;
+}
+.section {
+  padding: 0.2em;
+}
+.poster_body h1 {
+text-align: center;
+color: #FFFFFF;
+font-size: 65pt;
+border: 2mm solid #BA0C2F;
+background-color: #BA0C2F;
+border-radius: 4mm 0mm;
+margin-top: 2mm;
+margin-bottom: 2mm;
+font-weight: normal;
+}
+.poster_body h2 {
+color: #000000;
+font-size: 40pt;
+padding-left: 4mm;
+font-weight: normal;
+}
+.span {
+width: 200%;
+}
+/* center align leaflet map,
+from https://stackoverflow.com/questions/52112119/center-leaflet-in-a-rmarkdown-document */
+.html-widget {
+margin: auto;
+position: sticky;
+margin-top: 2cm;
+margin-bottom: 2cm;
+}
+.leaflet.html-widget.html-widget-static-bound.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom {
+position: sticky;
+width: 100%;
+}
+pre.sourceCode.r {
+background-color: #dddddd40;
+border-radius: 4mm;
+padding: 4mm;
+width: 75%;
+/* align-items: center; */
+margin: auto;
+padding-left: 2cm;
+}
+code.sourceCode.r{
+background-color: transparent;
+font-size: 20pt;
+border-radius: 2mm;
+}
+.caption {
+font-size: 25pt;
+}
+.table caption {
+font-size: 25pt;
+padding-bottom: 3mm;
+
+}
+code {
+font-size: 1em;
+font-family: monospace;
+background-color: #00808024;
+color: #BA0C2F;
+padding: 1.2mm;
+border-radius: 2mm;
+}
+.poster_title code {
+font-size: 1em;
+}
+table {
+font-size: 40px;
+margin: auto;
+border-top: 3px solid #666;
+border-bottom: 3px solid #666;
+}
+table thead th {
+border-bottom: 3px solid #ddd;
+}
+td {
+padding: 8px;
+}
+th {
+padding: 15px;
+}
+caption {
+margin-bottom: 10px;
+}
+.poster_body p {
+margin-right: 4mm;
+margin-left: 4mm;
+margin-top: 6mm;
+margin-bottom: 10mm;
+}
+.poster_body ol {
+margin-right: 4mm;
+margin-left: 4mm;
+}
+#ul {
+margin-right: 4mm;
+margin-left: 4mm;
+}
+.references p {
+font-size: 20pt;
+}
+.orcid img {
+  width: 1em;
+}
+</style>
+</head>
+<body>
+
+
+<div class="poster_wrap">
+<div class="title_container">
+<!-- Left Logo  -->
+<div class="logo_left">
+<img src= 'figures/logo.png' style="width: 80%">
+</div>
+<!-- Poster Title -->
+<div class= "poster_title">
+<h1 id="title">Quantification of influenza antibody vaccine responses accounting for both vaccine strength and breadth</h1>
+<h3 id="author">Amanda Skarlupka<sup>1</sup>, Zane Billings<sup>1</sup>, Ted Ross<sup>1,2</sup>, Andreas Handel<sup>1</sup></h3><br>
+<h5 id="affiliation"><sup>1</sup> Department of Epidemiology and Biostatistics, University of Georgia<br> <sup>2</sup> Cleveland Clinic’s Florida Research and Innovation Center</h5>
+</div>
+<!-- Right Logo  -->
+<div class="logo_right">
+<img src=figures/logo.png style="width: 80%">
+</div>
+</div>
+
+<div class='poster_body_wrap'>
+<div class='poster_body'>
+<style>
+.logo_left, .logo_right {
+ width: 15%;
+ height: 70%;
+ padding-top: 1em;
+}
+.poster_title {
+width: 70%;
+padding-top: 1em;
+}
+body {
+text-align: left;
+}
+p.caption {
+  font-size: 0.9em;
+}
+.special {
+  font-size: 0.94em
+}
+</style>
+<p><link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"></p>
+<div id="background" class="section level1">
+<h1>Background</h1>
+<ul>
+<li>For future universal influenza vaccine candidates, it will be important to quantify protective immunity against not just the vaccine components, but a broad range of genetically different influenza strains.</li>
+<li>HAI antibody titer is the most commonly used correlate of protection for influenza.</li>
+<li>To determine vaccine <strong>strength</strong>, HAI increase or post-HAI titers against the homologous vaccine components are measured.</li>
+<li>To determine vaccine <strong>breadth</strong>, HAI titers against heterologous strains are measured.</li>
+<li>Unless the panel of heterologous strains are the same, it is difficult to compare between vaccines/studies.</li>
+<li>Quantifying homologous <strong>strength</strong>, heterologous <strong>breadth</strong>, and <strong>total</strong> vaccine response will be useful.</li>
+</ul>
+</div>
+<div id="approach" class="section level1">
+<h1>Approach</h1>
+<ul>
+<li>We analyzed HAI data pre- and post-vaccination for vaccine and heterologous strains from the UGAFluVac cohort study.</li>
+<li>We determined the distance between vaccine strains and heterologous test strains using 3 measures: 1) Years, 2) Genetic Distance, 3) Antigenic Distance.</li>
+<li>We fitted linear models and computed intercept, slope, and area under the titer increase curve to determine <strong>strength</strong>, <strong>breadth</strong> and <strong>total</strong> vaccine response.</li>
+<li>We illustrated how this framework can be applied to compare Standard Dose (SD) with High Dose (HD) Fluzone vaccines.</li>
+</ul>
+</div>
+<div id="distance-measure-comparison" class="section level1">
+<h1>Distance measure comparison</h1>
+<!-- We first explored the impact of the different strain distance measures on estimates for strength, breadth and total vaccine response. -->
+<div class="figure"><span style="display:block;" id="fig:figstrains"></span>
+<img src="figures/p1.png" alt="HAI titers for the three distance measures: 1) Years; 2) Genetic distance as quantified by p-epitope; 3) Antigenic distance quantified by shortest path on an antigenic cartography map. Each distance measure was normalized to have comparable ranges between 0 and 1. (Homologous) Strength = Intercept of fitted line. (Heterologous) Breadth = Slope of fitted line. Total response = Area under the curve/line. Standard dose vaccine recipients only." width="100%" />
+<p class="caption">
+Figure 1: HAI titers for the three distance measures: 1) Years; 2) Genetic distance as quantified by p-epitope; 3) Antigenic distance quantified by shortest path on an antigenic cartography map. Each distance measure was normalized to have comparable ranges between 0 and 1. (Homologous) Strength = Intercept of fitted line. (Heterologous) Breadth = Slope of fitted line. Total response = Area under the curve/line. Standard dose vaccine recipients only.
+</p>
+</div>
+</div>
+<div id="dose-comparison-example" class="section level1">
+<h1>Dose comparison example</h1>
+<!-- We applied the above defined vaccine quantification measures to compare the impact of standard- versus high-dose Fluzone vaccines. -->
+<div class="figure"><span style="display:block;" id="fig:figsdhd"></span>
+<img src="figures/p2.png" alt="Strength, breadth and total amounts of HAI titer increase for standard dose (SD) and high dose (HD) vaccine recipients. Only individuals 65 years and above are included." width="100%" />
+<p class="caption">
+Figure 2: Strength, breadth and total amounts of HAI titer increase for standard dose (SD) and high dose (HD) vaccine recipients. Only individuals 65 years and above are included.
+</p>
+</div>
+</div>
+<div id="extensions" class="section level1">
+<h1>Extensions</h1>
+<ul>
+<li>Multi-level statistical models might help further refine the estimates.</li>
+<li>Models that are more flexible than linear models can be explored.</li>
+<li>Interaction between <strong>strength</strong> and <strong>breadth</strong> needs consideration.</li>
+<li>Different weighting for <strong>total</strong> response calculations are possible.</li>
+</ul>
+<p><img src="figures/p3.png" width="60%" /></p>
+</div>
+<div id="acknowledgements" class="section level1">
+<h1>Acknowledgements</h1>
+<div class="special">
+<p>This project is partially supported by NIH contract 75N93019C00060.</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+</body>
+</html>

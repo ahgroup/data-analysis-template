@@ -1,0 +1,117 @@
+/* Stylings for my ioslides presentations
+ * Last Modified: 2020-04-18
+-------------------------------------------------------------------------------- */
+
+/* This formats text used for student action calls
+-------------------- */
+.action
+{
+	color: black;
+	background-color: #F6C5C7;
+	border: 2px solid red;
+	padding-top: 5px;
+	padding-left: 5px;
+	padding-bottom: 0px;
+	padding-right: 5px;
+	border-radius: 10px;
+}
+
+/* This formats text used for discussion boxes
+-------------------- */
+.discuss
+{
+	color: black;
+	background-color: #c5e0f6;
+	border: 2px solid blue;
+	padding-top: 2px;
+	padding-left: 5px;
+	padding-bottom: 2px;
+	padding-right: 5px;
+	border-radius: 10px;
+	margin-bottom: 5px;
+}
+
+
+
+/*  See: https://bookdown.org/yihui/rmarkdown-cookbook/multi-column.html */
+.columns {
+  display: flex; 
+  flex-basis: auto;
+  margin: auto;
+}
+
+.column {
+  margin: auto;
+}
+
+/* Change color of reguler text and h2
+-------------------- */
+slides > slide {
+	color: black;
+}
+
+h2 {
+	color: #123c66;  /* dark blue */
+	margin-bottom: -20px; /* reduce space between title slide and text */
+}
+
+/* Turn off page count in footer
+-------------------- */
+slides > slide:not(.nobackground):after {
+  content: '';
+}  
+
+.narrowlist
+{
+	line-height: 100%;
+}
+
+
+/* Modify margin for level 1 (black title) slides */
+.segue 
+{
+	padding-left: 50px; 
+	padding-right: 50px;
+}
+
+.font90
+{
+	font-size: 90%;
+}
+
+.font80
+{
+	font-size: 80%;
+}
+
+
+#small
+{
+	font-size: 80%;
+}
+
+.small-font
+{
+	font-size: 90%;
+}
+
+
+#verysmall
+{
+	font-size: 50%;
+}
+
+/* Reduce font size for figure caption (class caption)
+-------------------- */
+.caption
+{
+	font-size: 60%;
+}
+
+
+/* Keep text off left side of screen
+-------------------- 
+p {
+	margin-right: 0px;
+}
+*/
