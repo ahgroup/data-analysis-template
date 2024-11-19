@@ -1,7 +1,6 @@
 ---
 title: "Example Manuscript Template for a Data Analysis Project"
-subtitle: ""
-author: Andreas Handel
+author: ""
 date: "`r Sys.Date()`"
 format:
   docx:
@@ -9,10 +8,13 @@ format:
     number-sections: true
     highlight-style: github
 bibliography: ../../assets/dataanalysis-references.bib
-csl: ../../assets/apa.csl
+csl: ../../assets/american-journal-of-epidemiology.csl
 ---
 
-The structure below is one possible setup for a data analysis project (including the course project). For a manuscript, adjust as needed. 
+
+
+
+The structure below is one possible setup for a manuscript, or a general data analysis project (including the course project). Adjust as needed. 
 You don't need to have exactly these sections, but the content covering those sections should be addressed.
 
 This uses MS Word as output format. [See here](https://quarto.org/docs/output-formats/ms-word.html) for more information. You can switch to other formats, like html or pdf. See [the Quarto documentation](https://quarto.org/) for other formats.
@@ -23,6 +25,30 @@ This uses MS Word as output format. [See here](https://quarto.org/docs/output-fo
 library(here)
 library(knitr)
 ```
+
+
+**Authors**  
+
+* First Autor$^{1,2,*}$;
+* Second Author$^{3, *};
+* Third Autor$^{3, \dagger}$;
+* Last Author$^{1, 2, \land}$ 
+
+**Author affiliations**  
+
+1. College of Public Health, University of Georgia, Athens, GA, USA.
+2. Another Affiliation, Athens, GA, USA.
+3. Yet another Affiliation.
+
+$*$ These authors contributed equally to this work.
+
+$\land$ Corresponding author: some@email.com
+
+$\dagger$ Disclaimer: The opinions expressed in this article are the
+author's own and don't reflect their employer.
+
+
+{{< pagebreak >}}
 
 
 
