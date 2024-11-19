@@ -1,15 +1,12 @@
 ---
 title: "Supplement to Example Manuscript Template for a Data Analysis Project"
-subtitle: ""
-author: Andreas Handel
-date: "`r Sys.Date()`"
 format:
   pdf:
     toc: false
     number-sections: true
     highlight-style: github
-bibliography: ../../../assets/dataanalysis-references.bib
-csl: ../../../assets/vancouver.csl
+bibliography: ../../assets/dataanalysis-references.bib
+csl: ../../assets/american-journal-of-epidemiology.csl
 ---
 
 
@@ -29,6 +26,12 @@ For illustrative purposes, I'm doing the supplement as pdf. For this to work, yo
 Of course you would choose the format based on needs.
 
 I'm also using a different style for the references here. (vancouver vs apa in the main manuscript). Usually one would have the formatting of the references the same in those two documents, but I want to illustrate how easy it is to switch reference formatting styles, you just need to get the right CSL file and specify it in the YAML header. We could also have a seperate reference bibtext (`.bib`) file, but here we are using the same.
+
+
+{{< pagebreak >}}
+
+
+
 
 # Overview
 

@@ -1,7 +1,6 @@
 ---
 title: "Example Manuscript Template for a Data Analysis Project"
 author: ""
-date: "`r Sys.Date()`"
 format:
   docx:
     toc: false
@@ -29,9 +28,9 @@ library(knitr)
 
 **Authors**  
 
-* First Autor$^{1,2,*}$;
-* Second Author$^{3, *};
-* Third Autor$^{3, \dagger}$;
+* First Autor$^{1,2,*}$ (ORCID: 0000-0000-1234-5678) 
+* Second Author$^{3, *}$
+* Third Autor$^{3, \dagger}$
 * Last Author$^{1, 2, \land}$ 
 
 **Author affiliations**  

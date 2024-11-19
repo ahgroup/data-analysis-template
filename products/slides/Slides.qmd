@@ -2,7 +2,7 @@
 title: Example Quarto slides
 format: revealjs
 bibliography: ../../assets/dataanalysis-references.bib
-csl: ../../assets/apa.csl
+csl: ../../assets/american-journal-of-epidemiology.csl
 ---
 
 ## Overview
