@@ -54,6 +54,7 @@ author's own and don't reflect their employer.
 # Summary/Abstract
 _Write a summary of your project._
 
+_It is recommended to use a structured abstract with Background/Methods/Results/Discussion sections._
 
 {{< pagebreak >}}
 
